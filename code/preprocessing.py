@@ -65,7 +65,7 @@ if __name__ == '__main__':
 	if not os.path.exists(constants.TRAINING_IMAGES):
 		os.makedirs(constants.TRAINING_IMAGES)
 	#load training data
-	self.load_data(constants.TRAINING_IMAGES,"TRAINING")
+	preproc.load_data(constants.TRAINING_IMAGES,"TRAINING")
 
 	if not os.path.exists(constants.VALIDATION_IMAGES):
 		os.makedirs(constants.VALIDATION_IMAGES)
