@@ -1,0 +1,6 @@
+TRAINING_IMAGES = "data/training_images"
+VALIDATION_IMAGES = "data/validation_images"
+TESTING_IMAGES = "data/testing_images"
+TRAINING_JSON = "imaterialist-product-2019/train.json"
+VALIDATION_JSON = "imaterialist-product-2019/val.json"
+TESTING_JSON = "imaterialist-product-2019/test.json"
