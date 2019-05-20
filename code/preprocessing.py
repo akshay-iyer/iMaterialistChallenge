@@ -1,3 +1,4 @@
+from collections import defaultdict
 import constants
 import json
 from multiprocessing.pool import ThreadPool
@@ -108,9 +109,21 @@ class Preprocessor:
 
 		key_url_list = self.get_key_url_list(file_path,data_type)
 		self.download_images(key_url_list)
-
-
 		pass
+
+	def view_data(self):
+		path = os.path.join(constants.TRAINING_JSON)
+		with open(path, "r") as read_file:
+			data = json.load(read_file)
+
+		class_dict =  defaultdict(list)
+
+		images = data['images']
+		for i in images:
+			class_dict[i["class"]].append(os.path.join(constants.TRAINING_IMAGES,
+				i["id"]))
+		return class_dict
+
 
 if __name__ == '__main__':
 	preproc = Preprocessor()
